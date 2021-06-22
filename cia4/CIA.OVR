@@ -1,0 +1,754 @@
+Procedure LFI;                    { <---- Look For Item  ***** }
+Begin
+  OH:=0;
+  For X:=1 To 50 Do
+  Begin
+    If (US=NS[X]) And ((N[X]=LO) Or (N[X]=-1)) Then
+    Begin
+      OH:=1;
+      Exit;
+    End;
+  End;
+  Begin
+    OH:=2;
+    Ansic(3);
+    Print('  I Can''t See That Here...');
+  End;
+End;
+
+Procedure DC1;                    { <---- Do Command RUN  ***** }
+Begin
+  If(US='NOR') And (LON[LO,1]>0) Then
+  Begin
+    LO:=LON[LO,1];
+    PTG;
+  End
+  Else If (US='SOU') And (LON[LO,2]>0) Then
+  Begin
+    LO:=LON[LO,2];
+    PTG;
+  End
+  Else If (US='EAS') And (LON[LO,3]>0) Then
+  Begin
+    LO:=LON[LO,3];
+    PTG;
+  End
+  Else If (US='WES') And (LON[LO,4]>0) Then
+  Begin
+    LO:=LON[LO,4];
+    PTG;
+  End
+  Else If(US='NOR') Or (US='SOU') Or (US='EAS') Or (US='WES') Then
+  Begin
+    Ansic(3);
+    Print('  I Can''t Go That Way At The Moment.');
+    MNM;
+  End
+  Else
+  Begin
+    LFI;
+    If OH=2 Then MNM
+    Else
+    Begin
+      If X=8 Then
+      Begin
+        LO:=5;
+        PTG;
+      End
+      Else If (X=37) And (RO=1) And (LO=20) Then
+      Begin
+        LO:=21;
+        PTG;
+      End
+      Else If X=10 Then
+      Begin
+        LO:=11;
+        PTG;
+      End
+      Else If X=14 Then
+      Begin
+        LO:=13;
+        PTG;
+      End
+      Else If X=33 Then
+      Begin
+        LO:=3;
+        PTG;
+      End
+      Else If (X=34) And (DA=1) Then
+      Begin
+        LO:=9;
+        PTG;
+      End
+      Else
+      Begin
+        Ansic(3);
+        Print('  I Can''t Go That Way At The Moment.');
+        MNM;
+      End;
+    End;
+  End;
+End;
+
+Procedure DC2;                    { <---- Do Command TAKE  ***** }
+Begin
+  LFI;
+  If OH=2 Then MNM
+  Else
+  Begin
+    Ansic(3);
+    If X In [2..4,6,15,16,20..23,25..28,30,31,37,39,40,42,44,45,46] Then
+    Begin
+      If N[X]=-1 Then Print('  I Already Have It.')
+      Else If CI>=5 Then Print('  I Can''t Carry Any More.')
+      Else
+      Begin
+        Print('  O.K.');
+        N[X]:=-1;
+      End;
+      If (US='PAI') And (PA=0) Then
+      Begin
+        Ansic(2);
+        Print('  Something Fell From The Frame.');
+        N[31]:=LO;
+        PA:=1;
+      End;
+      If (US='TEL') Then TE:=0;
+    End
+    Else
+    Begin
+      Print('  I Can''t Carry That!');
+    End;
+    MNM;
+  End;
+End;
+
+Procedure DC3;                    { <---- Do Command DROP  ***** }
+
+  Procedure Check;
+  Begin
+    For X:=1 To 46 Do
+    Begin
+      If (US=NS[X]) And (N[X]=-1) Then Exit;
+    End;
+    Ansic(3);
+    Print('  I Don''t Seem To Be Carrying It.');
+    MNM;
+  End;
+
+Begin
+  Check;
+  If X=30 Then
+  Begin
+    Ansic(3);
+    Print('  I Dropped The Cup But It Broke Into Small Pieces.');
+    Ansic(3);
+    Print('  The Coffee Soaked Into The Carpet.');
+    N[30]:=0;
+    DR:=0;
+  End
+  Else If X=45 Then
+  Begin
+    GL:=0;
+    N[45]:=LO;
+  End
+  Else If (X=31) And (N[30]=-1) Then
+  Begin
+    Ansic(3);
+    Print('  O.K. I Dropped It.');
+    Ansic(3);
+    Print('  But It Fell In The Coffee!');
+    N[31]:=0;
+    DR:=1;
+  End
+  Else
+  Begin
+    Ansic(3);
+    Print('  O.K. I Dropped It.');
+    N[X]:=LO;
+  End;
+  MNM;
+End;
+
+Procedure DC4;                    { <---- Do Command PUSH  ***** }
+
+  Procedure Moving;
+  Begin
+    Ansic(2);
+    Print('  The Doors Close And I Feel As The Room Is Moving.');
+    Delay(2000);
+    Ansic(2);
+    Print('  Suddenly The Doors Open Again.');
+    Delay(750);
+  End;
+
+Begin
+  If (US='BUT') And (LO=3) And (DA=0) Then
+  Begin
+    Ansic(3);
+    Print('  The Doors Open With A Whoosh!');
+    DA:=1;
+    MNM;
+  End
+  Else
+  If (N[46]=-1) And (US='BUT') Then
+  Begin
+    Ansic(3);
+    Print('  I Push The Button On The Box And');
+    If (LO=6) Or (LO=29) Then
+    Begin
+      Ansic(3);
+      Print('  There Is A Blinding Flash...');
+      LO:=1;
+      FL:=1;
+      LON[9,1]:=3;
+      Delay(1000);
+      PTG;
+    End
+    Else
+    Begin
+      Ansic(3);
+      Print('  NOTHING HAPPENS');
+      MNM;
+    End;
+  End
+  Else
+  Begin
+    LFI;
+    If OH=2 Then MNM
+    Else If (X=17) And (GL<>1) Then
+    Begin
+      Ansic(2);
+      Print('  There''s Electricity Coursing Thru The Square!');
+      Ansic(2);
+      Print('  I''m Being Electrocuted!');
+      Delay(1000);
+      LTG;
+    End
+    Else If (X=35) And (BU=0) Then
+    Begin
+      Ansic(3);
+      Print('  The Button On The Wall Goes In...');
+      Ansic(3);
+      Print('  CLICK! Something Seems Different Now.');
+      BU:=1;
+      MNM;
+    End
+    Else If (X=47) And (FL<>1) Then
+    Begin
+      LON[9,1]:=3;
+      FL:=1;
+      Moving;
+      PTG;
+    End
+    Else If (X=48) And (FL<>2) Then
+    Begin
+      LON[9,1]:=8;
+      FL:=2;
+      Moving;
+      PTG;
+    End
+    Else If (X=49) And (FL<>3) Then
+    Begin
+      LON[9,1]:=10;
+      FL:=3;
+      Moving;
+      PTG;
+    End
+    Else
+    Begin
+      Ansic(3);
+      Print('  NOTHING HAPPENS');
+      MNM;
+    End;
+  End;
+End;
+
+Procedure DC5;                    { <---- Do Command PULL  ***** }
+Begin
+  LFI;
+  If OH=2 Then MNM
+  Else If(X=18) And (GL<>1) Then
+  Begin
+    Ansic(2);
+    Print('  The Lever Has Electricity Coursing Thru It.');
+    Ansic(2);
+    Print('  I''m Being Eltrocuted!');
+    Delay(1000);
+    LTG;
+  End
+  Else If (X=18) And (EL=0) Then
+  Begin
+    Ansic(2);
+    Print('  The Lever Goes All The Way Up And Clicks.');
+    Ansic(2);
+    Print('  Something Seems Different Now.');
+    EL:=1;
+    MNM;
+  End
+  Else
+  Begin
+    Ansic(3);
+    Print('  NOTHING HAPPENS');
+    MNM;
+  End;
+End;
+
+Procedure DC6;                    { <---- Do Command LOOK  ***** }
+Begin
+  If (US='DRA') And (LO=5) Then
+  Begin
+    If DW=0 Then
+    Begin
+      Ansic(3);
+      Print('  It Looks Fragile.');
+      MNM;
+    End
+    Else
+    Begin
+      Ansic(3);
+      Print('  It''s Broken To Bits.');
+      MNM;
+    End;
+  End
+  Else
+  Begin
+    LFI;
+    IF OH=2 Then MNM Else
+    Begin
+      Ansic(3);
+      If (X=1) And (BA<>1) Then Print ('  There''s No Power For It.') Else
+      If (X=1) And (TE<>1) Then Print ('  There''s NO TV To Watch It On.') Else
+      If X=6 Then Print('  It Looks Heavy.') Else
+      If X=7 Then Print('  It''s Locked.') Else
+      If X=13 Then Print('  It''s A Very Strong Bag.') Else
+      If (X=19) And (DW=0) Then Print('  I Can See A Locked Drawer In It.') Else
+      If (X=19) Then Print('  I Can See A Broken Drawer In It.') Else
+      If (X=22) Or (X=27) Then Print('  There''s Writing On It.') Else
+      If (X=34) And (DA=1) Then Print('  The Doors Are Open') Else
+      If X=24 Then Print('  I Can See A Gleaming Stone In It!') Else
+      If X=9 Then Print('  There Is A Small Slit Near The Door.') Else
+      If X=34 Then Print('  There''s A Button Near The Doors.') Else
+      If ((X=41) Or (X=43)) And (BU=1) Then Print('  The Screen Is Dark.') Else
+      If X=41 Then
+      Begin
+        Print('  I See A Metal Pit 1000''s Of Feet Deep On One Moniter.');
+        Ansic(3);
+        Print('  On The Other Side Of The Pit I See A Large Hook.');
+      End
+      Else
+      If X=43 Then Print('  I See A Room With A Case On A Pedestal.') Else
+      If X=44 Then Print('  I See A Picture Of A Grinning Jackal.') Else
+      Print('  I See Nothing Of Interest');
+      MNM;
+    End;
+  End;
+End;
+
+Procedure DC7;                    { <---- Do Command INSERT  ***** }
+Var
+  R1,R2 : Str;
+Begin
+  LFI;
+  If OH=2 Then MNM Else
+  Begin
+    If (X<>3) And (X<>2) And (X<>4) And (X<>28) Then
+    Begin
+      Ansic(3);
+      Print('  I Can''t Do That!');
+      MNM;
+    End
+    Else
+    Begin
+      Ansic(4);
+      Prompt('  Tell Me, IN ONE WORD, Into What.  ');
+      Ansic(3);
+      Input(R1,10);
+      US:=Copy(R1,1,3);
+      Y:=X;
+      LFI;
+      If OH=2 Then MNM Else
+      Begin
+        Ansic(3);
+        If (Y=3) And (X=1) Then
+        Begin
+          Print('  O.K.');
+          BA:=1;
+          N[3]:=0;
+        End
+        Else If (Y=4) And (X=50) And (DG<=0) Then
+        Print('  The Guard Won''t Let Me!')
+        Else If (Y=2) And (X=1) Then
+        Begin
+          Print('  O.K.  The Tape Is In The Recorder.');
+          N[2]:=0;
+          TA:=1;
+        End
+        Else
+        If (Y=4) And (X=50) Then
+        Begin
+          Print('  POP!  A Section Of The Wall Opens...');
+          Ansic(3);
+          Print('  Revealing Something Very Interesting.');
+          N[4]:=0;
+          N[5]:=LO;
+        End
+        Else
+        If (Y=28) And (X=29) Then
+        Begin
+          Print('  POP!  A Cup Of Coffee Comes Out Of The Machine!');
+          N[28]:=0;
+          N[30]:=LO;
+        End
+        Else Print('  NOTHING HAPPENS');
+        MNM;
+      End;
+    End;
+  End;
+End;
+
+Procedure DC8;                    { <---- Do Command OPEN  ***** }
+Var
+  R1,R2 : Str;
+Begin
+  If (SS='DRA') And (LO=5) And (N[23]=0) Then
+  Begin
+    If DW=0 Then
+    Begin
+      Ansic(3);
+      Print('  It''s Stuck.');
+      MNM;
+    End
+    Else
+    Begin
+      Ansic(3);
+      Print('   It''s Already Open.');
+      MNM;
+    End;
+  End
+  Else
+  Begin
+    LFI;
+    If OH=2 Then MNM Else
+    Begin
+      Ansic(3);
+      If X In [7,9,13,15,23,32,5] Then
+      Begin
+        If (X=7) And (N[16]=-1) Then
+        Begin
+          Print('  O.K.  I Opened The Door.');
+          N[7]:=0;
+          N[8]:=4;
+        End
+        Else
+        If X=9 Then Print('  I Can''t.  It Doesn''t Work.') Else
+        If (X=13) And (N[16]=-1) Then
+        Begin
+          Print('  O.K.  The Closet Is Opened.');
+          N[13]:=0;
+          N[14]:=14;
+        End
+        Else
+        If X=15 Then Print('  I Can''t.  It''s Too Strong.') Else
+        If X=23 Then Print('  It''s Stuck.') Else
+        If (X=32) And (N[28]=0) And (N[4]=0) And (SC=1) Then
+        Begin
+          Print('  I Open The Sculpture');
+          Ansic(3);
+          Print('  And Something Falls Out.');
+          N[28]:=LO;
+          N[4]:=LO;
+          SC:=2;
+        End
+        Else
+        If X<>5 Then Print('  I Can''t Do That...  YET!')
+        Else
+        Begin
+          Ansic(4);
+          Prompt('  What''s The Combination?  ');
+          Ansic(3);
+          Input(R1,9);
+          CheckHangUp;
+          If HangUp Then RTB;
+          R2:=R1;
+          If R2=CO Then
+          Begin
+            Ansic(3);
+            Print('  The Door Is Slowly Opening.');
+            N[5]:=0;
+            N[9]:=0;
+            N[10]:=10;
+          End
+          Else
+          Begin
+            Ansic(2);
+            Print('  You Must Have The Wrong Combination.');
+            Ansic(2);
+            Print('    Or Else You Are Saying It Wrong.');
+          End;
+        End
+      End
+      Else Print('  I Can''t Open That!');
+    End;
+    MNM;
+  End;
+End;
+
+Procedure DC9;                    { <---- Do Command WEAR  ***** }
+Begin
+  Ansic(3);
+  If (US='GLO') And (N[45]=-1) Then
+  Begin
+    Print('  OK, I Am Now Wearing The Gloves.');
+    GL:=1;
+  End
+  Else
+  Print('  I Can''t Wear That!');
+  MNM;
+End;
+
+Procedure DC0;                    { <---- Do Command READ  ***** }
+Begin
+  If (US<>'SIG') And (US<>'NOT') Then
+  Begin
+    Ansic(3);
+    Print('  I Can''t Read That.');
+    MNM;
+  End
+  Else
+  Begin
+    LFI;
+    If OH=2 Then MNM
+    Else
+    If X=22 Then
+    Begin
+      Ansic(7);
+      Print('   We Have Discovered One Of Chaoses Secret');
+      Ansic(7);
+      Print('   Words.  It Is:  BOND-007 .  Use This In');
+      Ansic(7);
+      Print('   In  -TASTEFUL-  Situations.');
+      MNM;
+    End
+    Else
+    If X=27 Then
+    Begin
+      Ansic(2);
+      Print('  It Say''s:  WATCH OUT! DANGER!');
+      MNM;
+    End;
+  End;
+End;
+
+Procedure DCA;                    { <---- Do Command START  ***** }
+Begin
+  If US<>'REC' Then
+  Begin
+    Ansic(3);
+    Print('  I Can''t Start That!');
+    MNM;
+  End
+  Else
+  Begin
+    LFI;
+    If OH=2 Then MNM
+    Else
+    Begin
+      If (BA<>1) Or (TE<>1) Or (TA<>1) Then
+      Begin
+        Ansic(3);
+        Print('  NOTHING HAPPENED');
+        MNM;
+      End
+      Else
+      Begin
+        Ansic(7);Print('   The Recorder Starts Up And');
+        Ansic(7);Print('    Presents A Short Message');
+        Nl;
+        Ansic(7);Print('   We Have Uncovered A Number');
+        Ansic(7);Print('   That May Be Helpful To You');
+        Ansic(7);Print('        The Number Is...');
+        Ansic(4);Print('          '+CO);
+        Nl;
+        Nl;
+        Ansic(7);Print('    ALSO, There Is Something');
+        Ansic(7);Print('      In The Sculpture!');
+        SC:=SC+1;
+        MNM;
+      End
+    End;
+  End;
+End;
+
+Procedure DCB;                    { <---- Do Command BREAK  ***** }
+Begin
+  Ansic(3);
+  If US<>'DRA' Then Print('  I''m Trying, But It Won''t Break.') Else
+  If N[6]<>-1 Then Print('  I Can''t Do That... YET!') Else
+  If LO=5 Then
+  Begin
+    If DW=0 Then
+    Begin
+      Print('  It''s Hard But I Got It, Two Things Fell Out!');
+      N[3]:=LO;
+      N[22]:=LO;
+      N[23]:=LO;
+      DW:=-2;
+    End
+    Else
+    Begin
+      Print('  The Drawer Seems To Be Broken Already.');
+    End;
+  End
+  Else Print('  NOTHING HAPPENED');
+  MNM;
+End;
+
+Procedure DCC;                    { <---- Do Command CUT  ***** }
+Begin
+  LFI;
+  If OH=2 Then MNM
+  Else
+  Begin
+    Ansic(3);
+    If (X<>15) And (X<>24) Then Print('  I''m Trying, But It Won''t Work.') Else
+    If N[25]<>-1 Then Print('  I Can''t Do That... YET!') Else
+    If X=15 Then
+    Begin
+      Print('  RIP!  The Bag Falls To Pieces, And Something Falls Out.');
+      N[15]:=0;
+      N[2]:=LO;
+    End
+    Else
+    If X=24 Then
+    Begin
+      Print(' I Cut The Case And Reach Inside It');
+      Ansic(3);
+      Print('     To Pull Something Out...');
+      N[26]:=-1;
+    End;
+    MNM;
+  End;
+End;
+
+Procedure DCD;                    { <---- Do Command THROW  ***** }
+Var
+  R1,R2 : Str;
+Begin
+  Ansic(3);
+  If US<>'ROP' Then Print('  I Can''t Throw That!') Else
+  If N[37]<>-1 Then Print('  I Can''t Do That... YET!')Else
+  Begin
+    Ansic(4);
+    Prompt('  Tell Me, IN ONE WORD, At What  ');
+    Ansic(3);
+    Input(R1,10);
+    R2:=Copy(R1,1,3);
+    If R2<>'HOO' Then
+    Begin
+      Nl;
+      Ansic(3);
+      Print('  OK, I Threw It.');
+      N[37]:=LO;
+    End
+    Else If LO<>20 Then
+    Begin
+      Ansic(3);
+      Print('  I Can''t Do That... YET!');
+    End
+    Else
+    Begin
+      Ansic(7);
+      Print('  I Threw The Rope And It Snagged On The Hook.');
+      RO:=1;
+      N[37]:=LO;
+    End;
+  End;
+  MNM;
+End;
+
+Procedure DCE;                    { <---- Do Command CONNECT  ***** }
+Begin
+  Ansic(3);
+  If US<>'TEL' Then Print('  I Can''t Connect That!') Else
+  If N[40]<>LO Then Print('  I Don''t See The TV Here.') Else
+  If TE=1 Then Print('  I Did That Already.') Else
+  If LO<>2 Then Print('  I Can''t Do That... YET!') Else
+  Begin
+    Print('  OK, The TV Is Connected.');
+    TE:=1;
+  End;
+  MNM;
+End;
+
+Procedure DCF;                    { <---- Do Command QUIT  ***** }
+Begin
+  Nl;
+  Nl;
+  Print('WHAT?  You Would Leave Me Here Alone!');
+  Print(' Just For That I''m Gonna Get Even...');
+  Nl;
+  For X:=1 To 4 Do
+  Begin
+    Ansic(3);
+    Prompt('B  O  O  M  '+#8+#8+#8+#8+#8+#8+#8+#8+#8+#8+#8+#8);
+    Ansic(7);
+    Prompt(' B  O  O  M '+#8+#8+#8+#8+#8+#8+#8+#8+#8+#8+#8+#8);
+    Ansic(4);
+    Prompt('  B  O  O  M'+#8+#8+#8+#8+#8+#8+#8+#8+#8+#8+#8+#8);
+  End;
+  Ansic(2);
+  Print(' BBBB    OOO    OOO    MMM ');
+  Ansic(2);
+  Print(' B   B  O   O  O   O  M M M');
+  Ansic(2);
+  Print(' BBBB   O   O  O   O  M M M');
+  Ansic(2);
+  Print(' B   B  O   O  O   O  M M M');
+  Ansic(2);
+  Print(' BBBB    OOO    OOO   M M M');
+  Nl;
+  Delay(1500);
+  LTG;
+End;
+
+Procedure DCG;                    { <---- Do Command BOND  ***** }
+Begin
+  If LO=14 Then
+  Begin
+    Ansic(3);
+    Print('  WHOOPS! There Is A Trap Door Below Me...');
+    Ansic(3);
+    Print('    Suddenly I Am Falling Through Space.');
+    LO:=17;
+    Delay(1500);
+    PTG;
+  End
+  Else
+  Begin
+    Ansic(3);
+    Print('  Nothing Happened');
+    MNM;
+  End;
+End;
+
+Procedure DCH;                    { <---- Do Command INVENTORY  ***** }
+Begin
+  CI:=0;
+  Nl;
+  Ansic(3);
+  Print('We Are Now Carrying:');
+  For X:=1 To 46 Do
+  Begin
+    If N[X]=-1 Then
+    Begin
+      Ansic(4);
+      Prompt('  '+N1S[X]);
+      If (X=45) And (GL=1) Then Print(', Which I Am Wearing.')
+      Else Print('.');
+      CI:=CI+1;
+    End;
+  End;
+  If CI=0 Then Print('  NOTHING.');
+  MNM;
+End;

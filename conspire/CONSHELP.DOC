@@ -1,0 +1,196 @@
+         Welcome to CONSPIRACY, the game of gang-warfare. In this imaginary
+     world, you are trying to become the most powerful gang. Basically,
+     you want to accumulate men, money, and control over organizations.
+
+         But the world is not simple. There are adversaries to be dealt
+     with, as well as such minor things like the law. To become a GREAT
+     gang leader, you need to not only develop your own gauntlet of
+     power, but you also need to keep others in line-- be it by bribery
+     or force.
+
+         There are 4 stages in each turn that you need to be concened
+     with. The first is your income; this will determine your operating
+     budget for you. This is dependent on the total area you control,
+     the number of organizations you control, and other factors
+     explained fully later. The second stage is the recruiter report.
+     You have a recruiter(s) who is always on the lookout for new
+     members to your coalition. Your recruiter(s) will gain 'reserves'
+     for you in the different types of jobs you might want; anything
+     from generic goons to top-the-notch agents. You can actually use
+     these men as reserves if you pay your salaries. if you don't,
+     then they remain in reserve. The third stage is (of
+     course) salaries. You pay off all the members of your gang. The
+     final stage is where you actually do something. This is the player
+     activity stage.
+
+          There are 5 menus in the player activity stage...
+
+                A)TTACKS:
+          This your method of increasing your power, or handling other
+          gangs that are out of line.
+
+          A- attack: this will attack all the occupants of an
+     individual location, just doing general damage and destruction, as
+     well as wiping out whoever happens to be there.
+
+          C- control: this is an attempt to 'take over' an organization. 
+     This will make them give you a certain portion of there income to you 
+     every day. It will also give you certain 'special abilities' if the 
+     organization is important; i.e. controlling the police would let 
+     you arrest members of other gangs.
+
+          D- destroy: you don't care about an organization, but don't 
+     want anyone else to have it. Bliph! Then, no more organization!
+
+          F- free: there might be an organization under someone else's 
+     control. You don't want to take it over, or destroy it, but just 
+     don't want them to have it. So Wa-la! If you succeed, then it is no 
+     longer under control.
+
+          M- murder: your all purpose deal with an unfriendly person
+     command. This is very useful for weakening other gangs. The murder 
+     command will attempt to kill one of their 'bosses', limiting their 
+     strength.  Or you could attack their recruiters. Or, you can try to 
+     kill the "top banana." If you succeed in the latter, or killing all 
+     the bossess of a player, then that player's gang crumbles into chaos.
+
+
+          INTELLIGENCE
+
+          Intelligence is useful for finding out general information. 
+     This requires either spies or agents. If successful, you find out 
+     info on what you chose to spy on. If unsuccessful, your 
+     infiltrators are eradicated...
+
+          A- activate counteragents: this will put your agents on patrol
+     to prevent other groups from spying on you. It will also protect 
+     both you and your bosses from being assassinated.
+
+          C- check out a location: send a couple of guys to 'examine' a 
+     location. This will tell you what is generally there; like enemy 
+     gangs, D&S demand, and anything else important.
+
+          I- infiltrate gang: this is an attempt to get an agent inside 
+     of another organization. If you succeed, you will find out a lot of 
+     info on the target gang before yor agent bails out. If he doesn't 
+     succeed, you won't have to pay his salary next turn...     
+          
+          L- lay low: this will increase the safety of your gang, but 
+     you will miss a turn. This should be used if you KNOW someone is 
+     out to get you, and they are stronger than you. Or, if the cops are
+     real POed at you, it is not a bad idea then either.
+
+          S- search for gangs: this will send your men out in search of 
+     other gangs. It will tell you stuff like WHO is out there. Without 
+     doing this, you may never find out who you are competing with. If 
+     successful, you will find out WHO they are. Be careful-- anyone can 
+     attack someone once they know the gang name; so don't tell anyone 
+     your gang's name!
+     
+
+          MOVE COMMANDS
+
+          A- activate reserves: this will allow you to position anyone 
+     on reserves anywhere that you control.
+
+          M- move: move men from one place to another.
+
+          W- withdraw to reserves: take some men back into reserves. 
+     They can be kept there, or re-activated with 'A.'
+
+          Note- even when in 'reserve', you still must pay salaries for 
+     them.
+
+
+          PUBLICITY
+
+          Publicity is your attempt to keep everything nice and orderly 
+     with the public. Idealistically, the public should never know 
+     you exist. Unfortunately, leaders always make mistakes, and the 
+     media is always there to tell everyone. If the public becomes to
+     aware/frightened of you, the cops will make life for you difficult. 
+     If the public is delighted by your presence, you might have trouble 
+     keeping discipline among your staff, as well as collecting 
+     protection money from organizations you control. The idea is to 
+     stay balanced somewhere between the two endpoints. Everything you 
+     do affects your public rating, but there are other things you can 
+     do also just for impact here.
+
+          C- charity: sacrificing men and $$$ for a good cause. This 
+     generally makes the public like you more. Men you contribute to the 
+     ministry or other public affairs are permanently gone. 
+
+          N- nark: tell on another gang. Give the cops info on them. 
+     This generally hurts their public rating, but does little to yours.
+
+          R- random killing- not something to be commanded by a priest.
+
+
+          STATUS
+
+          There are ways to figure out what is going on, as well as the 
+     general outlook. 
+
+          F- financial: tell you how your $$$ flow is going.
+
+          L- local: give you stats for an area you control
+
+          M- military: how your men are doing. You have different types 
+     of personelle involved here, so you will get an indiviual 
+     inventory.
+
+
+          TRADING
+
+          Just giving away stuff to other gangs. I doubt if anyone will 
+     ever use it, but it is possible... Pretty self-explanatory.
+
+
+          Other misc. gook that didn't fit in anywhere...
+           
+          Combat:
+     
+          Every combat, there is a winner and a loser. Each side has a 
+     strength determined by the number of men and of each type, as well 
+     as the amount of $$$ that you pump into them before combat.
+          
+          Men:
+
+          There are several kinds of useful men you hire...
+          Goons- general grunt. Good for combat, but not much else.
+          Elite- an intelligent grunt. Better in combat, and needs no 
+     leader.
+          Leader- leads the grunts. W/O these, your grunts' true 
+     intelligence is brought forth, usually not helping the situation. 
+     You want to have at least one leader for every 5 attacking grunts.
+          Boss- in charge of an operation. You can only make as many 
+     attacks as the number of bosses you have. If you have only 1 boss, 
+     you may make an attack on one area only once a day.
+          Spy- an intelligence agent. Superior in combat.
+          Agent- a super-spy. Deadly in combat.
+     
+          Recruiters- find people to join your cause of capital gain.
+
+          And then there are the people associated with money...
+          Pimp- in charge of the local pro organizations.
+          Dealer- in charge of the local drug rings.
+          
+          Every location has a 'D&S' demand. This determines the success 
+     one might have by deploying pimps and dealers in certain areas. 
+     These men usually make a lot of money for a gang; more than enough 
+     to cover their own salaries.
+
+
+          INCOME
+
+          Your income comes from the following:
+          Locations you control (from terrorizing the locals)
+          Organizations you control.
+          Pimps deployed in areas of demand.
+          Dealers deployed in areas of demand.
+          Donations from other gangs.
+
+
+
+
+

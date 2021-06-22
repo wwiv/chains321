@@ -1,0 +1,64 @@
+Hello. Included in the StarClash archive are:
+
+Starclas.pas - source to starclash
+Starinit.pas - initializes data files for starclash
+Stardocs.txt - general instructions and rules for StarClash
+Sysop400.txt - info on StarClash for SysOps.
+Regis.dat    - registration info on SC. DO NO CHANGE!
+
+There are three steps to setting up StarClash.
+1) Copy Starclas.com into you main BBS directory.
+2) Run starinit.com (while in your BBS directory).
+3) Install in your BBS list of chains.
+
+You can do more if you want. Some ideas include:
+4) Putting the StarDocs.txt in gfiles. This makes online help available.
+5) you can modify Starinit.pas. This will change different values for the
+   game.
+
+Notice: StarClash is copyrighted March 1988 Elihu Feustel. StarClash is
+        distributed on the shareware concept. You may 'try before you 
+        buy'. You are permitted to test this program for up to 2 weeks 
+        before deciding if it is suitable for your needs. After the 2 
+        week trial period, you must either send in $20 for registration 
+        at the address listed below, or cease to use this product.
+
+MODIFICATION:
+You are allowed to modify the source under the following conditions:
+1 You do not distribute any modifications.
+2 You do not modify the registration number. This is for your protection, as
+  well as mine.
+3 The Credits routine is not allowed to be changed.
+4 You may only modify a registered copy.
+
+$profits$
+You are allowed to charge to play StarClash. After paying the $20 program fee,
+you are entitled to all profits you make from charging, and need not pay
+royalties.
+
+SysOp functions- StarClash has built in SysOp functions. They are pretty self-
+explanatory. To activate SysOp menu, press ']' from the main menu.
+
+DISCLAIMER: The author makes no claims, neither written nor implied, that this
+software package will comply to the needs of the purchaser. The author is not
+repsonsible for damages done by the package.
+The author DOES, however, support it. If you find a bug, you can be 
+assured that it will be fixed promptly. In version 4.1, there are no 
+known new bugs, and the Feds are badder than ever!
+
+Ordering info: To register, send a check for $20 to the address below. 
+
+
+If you have questions or comments, feel free to write:
+Elihu Feustel
+Box 1421
+Rose Hulman Institute of Technology
+Terre Haute, IN 47803
+
+or Call (812-877-4416) at 3-12 baud (24 is too noisy)
+          
+          Best wishes with StarClash!
+
+     One final note... I would like to thank Wayne Bell for designing 
+     WWIV BBS systems.      
+          

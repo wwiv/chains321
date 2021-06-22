@@ -1,0 +1,21 @@
+You'll need to make a text file called STUFFX.GEO.  The easiest way to make it
+is to use COPY CON STUFFX.GEO.  In it, you'll need to put a number between 1 
+and 3.  This is the counter for running the maintenance program more than once
+a day.  Anyhow, the way it is currently set up, it will run 3 times a day.
+You'll need to set the STUFFX.GEO file accordingly before you run geopolitics,
+or the maintenance program will screw up.  Basicly, if its between midnight and
+8am, set it to 3.  If its between 8am and 4pm, set it to 1.  If its between 4pm
+and 11:59pm, set it to 2.  You can modify this in the source code very easily
+if you want it to run a different number of times per day.  Now this part is
+important, the STUFFX.GEO file, can only be 1 byte long.  So use the 
+COPY CON STUFFX.GEO.  Then enter the appropriate number and ^Z without doing
+a carraige return.  If you put the return in there, it will be bigger than 1
+byte long.  
+
+Oh yea, STUFFX.GEO goes in the DATA sub-directory.
+
+Anyhow, that should do it, if you have any problems, let me know.
+
+Mike
+Ed Barltes
+

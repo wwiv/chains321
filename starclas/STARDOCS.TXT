@@ -1,0 +1,172 @@
+StarClash Documentation
+ 
+Most of the commands and rules are self explanatory, but here is a list of 
+stuff...
+ 
+The OBJECT of StarClash is galactic dominance. Whoever controls the whole 
+galaxy wins.
+ 
+This is achieved by building up your empire. The most important aspect of an 
+empire is its income. Controlling planets, bases, and empty space all 
+contribute to your income (Basic Resource Points).
+ 
+Here is the income listing:
+Control of:     Habitable System        25 BRPs
+                Minor Planet            50 BRPs
+                Major Planet            75 BRPs
+                Key Planet              100 BRPs
+ 
+                Dock                    6 BRPs
+                Base Station            12 BRPs
+                Battle Station          18 BRPs
+                StarBase                24 BRPs
+
+                Empty Sector            1 BRP
+ 
+                Misc (all players)      15 * TECH level BRPs
+                                        Note- if Tech level is decimal, it 
+                                        will keep decimal when computing.
+
+Note- you recieve income for each you have. If you have a sector with a base 
+and a planet, you get income for all of these. 
+ 
+Also note that your income accumulates everyday, regardless of if you play. If 
+you die, your BRP total is reset to 0, and all your income is gone and your 
+tech level is reset.
+
+
+Map-
+  The map is represented by a 20x20 grid. The top left sector is 1, top right 
+is 381, bottom left is 20, and the bottom right is 400. Note- if you are in 
+sectors 1-20, you cannot move left; sectors 381-400 cannot move right. You also
+can not scroll off the top; ie you can not move from sector 1 to 20.
+
+                             
+               
+Normal Menu: 
+ 
+  A)ctivate mines- if you have a mineship, you may place mines. Mines will 
+damage any fleet that passes through the sector, unless they also have a 
+mineship. If they have a mineship, they may sweep the mines, or they can take 
+damage.
+
+  B)uild ships- self explanatory. Note that as your tech level goes up, better 
+ships become available. The better the ship, the more expensive. If you have a 
+base, the price is reduced. The better the base, the better the price...
+
+  C)olonize- this will upgrade a planet. If it was a Habitable planet, it 
+becomes a minor planet. This is expensive; it costs lots of BRPs, but is a 
+worthy investment if you can hold it.
+ 
+  D)ock- will put you in base menu. Only applicable if there is a friendly 
+base in your sector.
+ 
+  E)ntire map- will show you your empire in grid form with ASCII.
+ 
+  F)und transfer- this command can give BRPs to other players from your own 
+account. Nice for alliances.
+ 
+  G)arrison and move- same as move, but allows you to leave ships behind.
+ 
+  I)nventory- this will show all the sectors you have stuff in, how many ships
+are there, your bases, and planets under your control. It is free.
+ 
+  L)ocal info- this shows how many of each ship you have in the current 
+sector, plus planets and bases if applicable.
+ 
+  M)ove- costs 1 BRP. Will move all ships in your sector to one of four 
+adjacent sectors. Note- on borders of map, you ay have less than 4 possible 
+moves. 
+
+  O)utpost construction- will build a DOCK in your current sector. A DOCK is a 
+base, and can be upgraded. It costs 80 to build a dock. Note that all crippled 
+ships are automatically repaired if they are left at a base overnight. The 
+cost for repair is 1/4 of the price of the ship.
+ 
+  P)robe sector- will scan a sector adjacent to you. This costs 1 BRP. It will 
+tell you who controls the sector, how many of what kind of ship, base, and 
+planets...
+ 
+  Q)uit- returns to BBS.
+ 
+  S)can- this will do a quick scan of all adjacent sectors. It will tell you 
+if anything is in the sectors. This costs 1 BRP, and is an effiecent way to 
+scout for things (though you won't how much is there without a probe.) The 
+'mass rating' is an approximation of non-solar mass in the sector.
+ 
+  T)ransfer- this will move you to another sector with friendly ships. Very 
+useful if your ships are split up, or several battles are begin fought. This 
+is free.
+
+  U)noccupy sector- this will surrender a sector to anyone you chose. All 
+ships in the sector will be also handed over, unless you immediately move them 
+out.
+
+  Y)our info- this will do 2 things. It will show you what is in your sector, 
+and will tally up your forces (ships, planets, and bases.) It also gives you 
+your predicted income for the next day, assuming you do not lose any of your 
+assets.
+
+
+BASE menu:
+ 
+  B)uild ships- same as normal. Don't forget about discount for a base.
+ 
+  L)ong range scan- you can scan ANY sector in the map. It works the same as 
+PROBE from normal menu. This costs 2 BRPs.
+ 
+  Q)uit base - returns to the regular menu
+
+  S)can- better than sector scan, and free. Advantage of base.
+ 
+  U)pgrade- this will increase the durability and income of your base. This 
+will cost 40 BRPs more than your last expenditure on the base. IE upgrading a 
+DOCK (normally 80 BRPs) to a Base Station would cost 120 BRPs.
+
+Notes on BASES- Bases are excellent defensive posts. They become near 
+impossible to destroy as the increase in size. Also note that your maximum 
+size of your base increases with you TECH level. You may have a DOCK at any 
+level, BASE at 3, BATTLE STATION at 5, and a STARBASE at 7.
+
+ 
+ 
+COMBAT-----
+ 
+If you move into a sector with an enemy, you get the combat menu.
+ 
+Combat menu:-
+ 
+  E)ngage main ships- this will fight a battle between you and the opponent. 
+
+    Observe some important factors:
+
+    1 Command rating- each fleet will pick its best ship as a flag ship. The 
+      flag ship can command a limited number of ships in battle. Your best 
+      ships will be commanded (by firepower). Note that cripples will not be 
+      engaged unless all other ships are gone...
+ 
+    2 Punch power- each ship has a offensive strength. The bigger, the more 
+      damage the enemy takes.
+ 
+    3 Defense power- each ship has a defensive value. The bigger, the more 
+      PUNCH it absorbs. Big ships aren't always killed when they are hit, 
+      instead they are crippled.
+
+  D)ogfight- will engage fighters (if you have any) with the opponents'.
+ 
+  B)omber raid- will engage enemy with your bombers. Bombers will do massive 
+      damage if they penetrate, but will fail miserably if the opponent has 
+      fighters.
+ 
+  S)top fighting- basic retreat.
+
+Remember, the defender always has a significant advantage. If the defender has 
+a base, then the attacker can expect to lose a lot more. A base has an 
+excellent command rating, and a super firepower (when upgraded.)
+
+
+Tech level- all players start off at a tech level of 2. About once a week, 
+this will go up. As your tech level goes up, you will be able to build better 
+ships. You economy will improve, and you will just become a nastier opponent 
+in general. The moral- don't die.
+

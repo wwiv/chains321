@@ -1,0 +1,32 @@
+31
+  The object of this game is to become THE dominant player on the board.
+You do this by increasing your experience and thus your level.  Gaining levels
+creates the opportunity for an increase in ability scores which will be
+reflected in combat.  You also can increase your effectiveness by buying new
+weapons and ships.  Weapons increase your damage, while ships decrease the
+chance of being hit. The following explains the list of commands:
+A- attack ....This will send you to space where you may battle creatures to
+experience and credits. Your options from here are:
+choose one of the attack areas(R,O,Y,G,B,I,V,U)
+which differ in difficulty which is stated in the ? menu
+Q- quit and return to main menu.
+S- see your status
+B- Fight others..This may be used to attack other players. Typing a question
+mark will give you a list of players who you can attack.  Type
+in the complete name and number of the player as it is displayed
+H- heal........Restore damage taken in combat.
+L- levelupdate.Every time you play the game the first thing you'll see after
+your password is this procedure.  It will tell you how much
+experience is needed for the next level, and if you have
+enough will promote you to that level.  Since it is run only
+at the beginning of the program you should use it every so
+often to check to see if you have gained a level.  If you have
+you will be promoted immediately.
+S- status......Look at your abilities,weapon,ship,shield points,and all other
+data pertaining to your character.
+W-weaponshop...This is where you can buy and sell weapons and ships. Type B
+to buy and answer 0 for the next question to see a list of
+weapons and ships.  You can sell your present weapon or ship
+back to the shop, but at decreased value.
+Q- quit........Leave the program.
+
